@@ -91,6 +91,7 @@
 
                     function initializeSnippetOnTargetWindow(window) {
                             const document = window.document;
+                            const apiKey = '8706d48b-aec9-4a32-7bfa-d35d2ee0d358'; // tobo iframetown sub in pendo-batman
 
                             // The idea here is that this is the literal copy-pasted snippet
                             // Thats why I override window/document above, so we can shift the target window/document of the
@@ -102,7 +103,7 @@
                                 v = ['initialize', 'identify', 'updateOptions', 'pageLoad']; for (w = 0, x = v.length; w < x; ++w)(function (m) {
                                     o[m] = o[m] || function () { o._q[m === v[0] ? 'unshift' : 'push']([m].concat([].slice.call(arguments, 0))); };
                                 })(v[w]);
-                                y = e.createElement(n); y.async = !0; y.src = 'https://pendo-dev-static.storage.googleapis.com/agent/static/' + apiKey + '/pendo.js';
+                                y = e.createElement(n); y.async = !0; y.src = 'https://pendo-batman-static.storage.googleapis.com/agent/static/' + apiKey + '/pendo.js';
                                 z = e.getElementsByTagName(n)[0]; z.parentNode.insertBefore(y, z);
                             })(window, document, 'script', 'pendo');
 
@@ -120,7 +121,7 @@
                                     id: queryString.visitor || 'testuser@pendo'
                                 },
                                 disableGuideCenterContentSearch: true,
-                                apiKey: '7f11f0ee-8da9-408e-6529-bd625ef8956e',
+                                apiKey: apiKey,
                                 account: {
                                     id: 12345,
                                     city: 'Raleigh',
@@ -128,7 +129,7 @@
                                 }
                             });
 
-                        })('7f11f0ee-8da9-408e-6529-bd625ef8956e');
+                        })(apiKey);
 
                     }
 
